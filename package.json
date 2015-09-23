@@ -1,0 +1,50 @@
+{
+  "name": "paypalm-flashbean",
+  "description": "paypalm api",
+  "author": {
+    "name": "navyxie"
+  },
+  "keywords": [
+    "pay",
+    "api",
+    "支付",
+    "pp钱包",
+    "闪豆",
+    "SDK",
+    "理财支付",
+    "paypalm",
+    "flash-bean"
+  ],
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/navyxie/paypalm-flashbean.git"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.55.0",
+    "xml2js": "^0.4.9",
+    "base64":"^2.1.0",
+    "iconv-lite":"^0.4.11",
+    "ursa": "^0.8.4"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "istanbul": "^0.3.17",
+    "should": "^7.0.2",
+    "muk": "^0.3.2"
+  },
+  "bugs": {
+    "url": "https://github.com/navyxie/paypalm-flashbean/issues"
+  },
+  "homepage": "https://github.com/navyxie/paypalm-flashbean",
+  "scripts": {
+    "test": "make test"
+  },
+  "maintainers": [
+    {
+      "name": "navyxie",
+      "email": "navyxie2010@gmail.com"
+    }
+  ]
+}
