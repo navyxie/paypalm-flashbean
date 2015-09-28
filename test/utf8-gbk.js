@@ -1,4 +1,5 @@
 var should = require('should');
+var iconvLite = require('iconv-lite'); 
 var UTF8TGBK = require('../lib/utf8-gbk');
 var plaintext1 = '6222081202007547506';
 var ciphertext1 = '6222081202007547506';
@@ -27,6 +28,6 @@ describe('utf8-gbk',function(){
 		});	
 		it('cn_en should be ok',function(){
 			UTF8TGBK.decode(new Buffer(ciphertext3,'binary')).should.be.equal(plaintext3);
-		});	
+		});
 	});
 })
