@@ -10,11 +10,11 @@ var data = {
 	bankcard:"6222081202007547506" || "",
 	cardusername:"程朝铭" || "",
 	idno:"360732199305172615" || "",
-	payphone:"18658150058" || "",
+	payphone:"15112195422" || "",
 	cardbankname:"中国工商银行" || "",
 	remark:"navy" || "",
-	returnurl:"http://192.168.24.16:8088/paypalm-server-sdk-php-api/WebContent/demo/merNotify.php",
-	notifyurl:"http://192.168.24.16:8088/paypalm-server-sdk-php-api/WebContent/demo/merNotify.php"
+	returnurl:"http://58.67.144.241:8120/notify_url/simulate_handler",
+	notifyurl:"http://58.67.144.241:8120/notify_url/simulate_handler"
 };
 describe('payInstance',function(){
 	describe('#getPayUrl()',function(){

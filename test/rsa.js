@@ -1,6 +1,7 @@
 var should = require('should');
 var rsa = require('../lib/rsa');
 var config = require('../lib/config');
+var UTF8TGBK = require('../lib/utf8-gbk');
 var pri = config.MERPRIVATE;
 var pub = config.PAYPALMPUBLIC;
 var plaintext1 = 'test_english';
@@ -12,10 +13,10 @@ var sign2 = 'RJSphbO6mPBb4mpqfeF0cuRhdMxKkF2msVOwux/Ao5VCDPNboIx6QucsqiIWb/rztnn
 describe('RSA',function(){
 	describe('encrypt',function(){
 		it('en should be ok',function(){
-			rsa.encrypt(pub,plaintext1).should.not.be.equal('');
+			rsa.encrypt(pub,UTF8TGBK.encode(plaintext1)).should.not.be.equal('');
 		});	
 		it('cn should be ok',function(){
-			rsa.encrypt(pub,plaintext2).should.not.be.equal('');
+			rsa.encrypt(pub,UTF8TGBK.encode(plaintext2)).should.not.be.equal('');
 		});
 	});
 	describe('decrypt',function(){
@@ -23,15 +24,15 @@ describe('RSA',function(){
 			rsa.decrypt(pri,ciphertext1).should.be.equal(plaintext1);
 		});	
 		it('cn should be ok',function(){
-			rsa.decrypt(pri,ciphertext2).should.be.equal(plaintext2);
+			UTF8TGBK.decode(new Buffer(rsa.decrypt(pri,ciphertext2),'binary')).should.be.equal(plaintext2);
 		});
 	});
 	describe('sign',function(){
 		it('en should be ok',function(){
-			rsa.sign(plaintext1,pri).should.be.equal(sign1);
+			rsa.sign(UTF8TGBK.encode(plaintext1),pri).should.be.equal(sign1);
 		});	
 		it('cn should be ok',function(){
-			rsa.sign(plaintext2,pri).should.be.equal(sign2);
+			rsa.sign(UTF8TGBK.encode(plaintext2),pri).should.be.equal(sign2);
 		});
 	});
 	describe('verify',function(){
